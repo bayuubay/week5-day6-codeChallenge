@@ -1,0 +1,9 @@
+"runt this to generate table"
+npx sequelize-cli model:generate --name users --attributes full_name:string
+npx sequelize-cli model:generate --name tasks --attributes name_id:integer,description:string,status:integer
+npx sequelize-cli db:migrate
+
+"run this to seed some data"
+npx sequelize-cli seed:generate --name users
+npx sequelize-cli seed:generate --name tasks
+npx sequelize-cli db:seed:all
